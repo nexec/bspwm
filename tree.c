@@ -285,7 +285,8 @@ void insert_node(monitor_t *m, desktop_t *d, node_t *n, node_t *f)
 		d->focus = n;
 	if (n->client->sticky)
 		m->num_sticky++;
-	put_status(SBSC_MASK_REPORT);
+	else
+		put_status(SBSC_MASK_REPORT);
 }
 
 void pseudo_focus(monitor_t *m, desktop_t *d, node_t *n)
@@ -952,7 +953,8 @@ void unlink_node(monitor_t *m, desktop_t *d, node_t *n)
 	}
 	if (n->client->sticky)
 		m->num_sticky--;
-	put_status(SBSC_MASK_REPORT);
+	else
+		put_status(SBSC_MASK_REPORT);
 }
 
 void remove_node(monitor_t *m, desktop_t *d, node_t *n)
