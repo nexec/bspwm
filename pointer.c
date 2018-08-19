@@ -99,19 +99,7 @@ void grab_pointer(pointer_action_t pac)
 							frozen_pointer->side = SIDE_RIGHT;
 					}
 				} else if (pac == ACTION_RESIZE_CORNER) {
-					int16_t mid_x = frozen_pointer->rectangle.x + (frozen_pointer->rectangle.width / 2);
-					int16_t mid_y = frozen_pointer->rectangle.y + (frozen_pointer->rectangle.height / 2);
-					if (pos.x > mid_x) {
-						if (pos.y > mid_y)
-							frozen_pointer->corner = CORNER_BOTTOM_RIGHT;
-						else
-							frozen_pointer->corner = CORNER_TOP_RIGHT;
-					} else {
-						if (pos.y > mid_y)
-							frozen_pointer->corner = CORNER_BOTTOM_LEFT;
-						else
-							frozen_pointer->corner = CORNER_TOP_LEFT;
-					}
+                    frozen_pointer->corner = CORNER_BOTTOM_RIGHT;
 				}
 				if (frozen_pointer->is_tiled) {
 					if (pac == ACTION_RESIZE_SIDE) {
